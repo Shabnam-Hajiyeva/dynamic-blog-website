@@ -1,0 +1,26 @@
+Dynamic Blog Website - Project Plan
+
+Pages:
+1. index.html
+   - Displays list of blog posts
+   - Each post links to post.html with post ID
+
+2. new-post.html
+   - Form to create a new blog post
+   - Saves post to localStorage
+
+3. post.html
+   - Displays a single post based on ID
+   - Allows editing and deleting post
+
+JavaScript Functionality:
+- Use localStorage to save and retrieve posts
+- Implement Create, Read, Update, Delete (CRUD)
+
+Design:
+- Use responsive CSS (Flexbox or Grid)
+- Mobile-first design approach
+
+Version Control:
+- All changes will be tracked with Git
+- Commits will be descriptive and frequent
