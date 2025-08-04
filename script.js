@@ -21,3 +21,36 @@ document.addEventListener("DOMContentLoaded", function () {
     postsContainer.appendChild(postEl);
   });
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("new-post-form");
+  if (!form) return;
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const title = document.getElementById("title").value.trim();
+    const content = document.getElementById("content").value.trim();
+    const image = document.getElementById("image").value.trim();
+
+    if (title === "" || content === "") {
+      alert("Title and content cannot be empty!");
+      return;
+    }
+
+    const posts = JSON.parse(localStorage.getItem("blogPosts")) || [];
+
+    const newPost = {
+      id: Date.now(),
+      title,
+      content,
+      image
+    };
+
+    posts.push(newPost);
+    localStorage.setItem("blogPosts", JSON.stringify(posts));
+
+    window.location.href = "index.html";
+  });
+});
