@@ -54,3 +54,16 @@ document.addEventListener("DOMContentLoaded", function () {
     window.location.href = "index.html";
   });
 });
+
+ document.getElementById("save-btn").addEventListener("click", () => {
+    post.title = document.getElementById("edit-title").value.trim();
+    post.content = document.getElementById("edit-content").value.trim();
+    post.image = document.getElementById("edit-image").value.trim();
+
+    const updatedPosts = posts.map(p => (p.id === postId ? post : p));
+    localStorage.setItem("blogPosts", JSON.stringify(updatedPosts));
+    alert("Post updated!");
+    window.location.href = "index.html";
+  });
+document.addEventListener("DOMContentLoaded", loadAndEditPost);
+
