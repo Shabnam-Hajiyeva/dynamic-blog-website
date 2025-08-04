@@ -67,3 +67,10 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 document.addEventListener("DOMContentLoaded", loadAndEditPost);
 
+ document.getElementById("delete-btn").addEventListener("click", () => {
+    if (confirm("Are you sure you want to delete this post?")) {
+      const updatedPosts = posts.filter(p => p.id !== postId);
+      localStorage.setItem("blogPosts", JSON.stringify(updatedPosts));
+      window.location.href = "index.html";
+    }
+  });
